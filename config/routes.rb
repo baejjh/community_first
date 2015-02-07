@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+
+  root 'sites#how'
+
+  get 'sites/how'     #display map and mortage calculators
+  get 'sites/why'     #reasons why property owners should get invovled
+  get 'sites/who'     #who community first is
+
+  get 'calculators/index'
+  get 'calculators/show'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
