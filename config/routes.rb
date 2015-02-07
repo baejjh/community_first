@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'sites#how'
+  root 'sites#index'
 
   get 'sites/how'     #display map and mortage calculators
   get 'sites/why'     #reasons why property owners should get invovled

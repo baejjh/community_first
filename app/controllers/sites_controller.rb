@@ -1,5 +1,5 @@
 class SitesController < ApplicationController
-  def how
+  def index
   end
 
   def why
