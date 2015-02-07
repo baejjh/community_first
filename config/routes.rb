@@ -2,9 +2,7 @@ Rails.application.routes.draw do
 
   root 'sites#index'
 
-  get 'sites/how'     #display map and mortage calculators
-  get 'sites/why'     #reasons why property owners should get invovled
-  get 'sites/who'     #who community first is
+  get 'map' => 'sites#map'
 
   get 'calculators/index'
   get 'calculators/show'
