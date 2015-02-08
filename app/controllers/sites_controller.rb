@@ -18,7 +18,7 @@ class SitesController < ApplicationController
         # puts "THIS IS A TERRIBLE IDEA"+@get_zpid.to_s
 
         # ZILLOW API
-        
+
         input_url           = "http://www.zillow.com/webservice/GetUpdatedPropertyDetails.htm?zws-id=X1-ZWz1az100jazgr_82rpe&zpid=48749425"
         # input_url           = "http://www.zillow.com/webservice/GetUpdatedPropertyDetails.htm?zws-id="+params["zws-id"]+"&zpid="+@zpid_string
         @doc                = Nokogiri::HTML(open(input_url)) do |config|
