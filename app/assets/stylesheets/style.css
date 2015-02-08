@@ -40,3 +40,9 @@ header .intro-text .intro-lead-in {
 .form-group .home input {
     width: 400px;
 }
+
+#home-button {
+  background-color: #0072bc;
+  border-color: #0072bc;
+  color: white;
+}
