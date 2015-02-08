@@ -3,216 +3,192 @@
 <script src='//google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js' type='text/javascript'></script>
 
 <section id="maps">
-<div class="container text-center">
-    <div class="row">
-		<div class="col-md-6">
-		<!-- Real Map -->
-			<div id="map-content">
-	  		<div id="map">
-	  			<div id="custom_style"></div>
-	  		</div>
-	  	</div>
-	  <!--/ Real Map-->
-		<!--API testing-->
-		</div>
-		<div class="col-md-6 fixed-height">
-			<form action="/map" method="get" class="form-horizontal" id="AddressForm">
-				<input type="hidden" name="zws-id" value="X1-ZWz1az100jazgr_82rpe">
-				<div class="input-group">
-					<input type="text" class="form-control" name="address" placeholder="Enter full address">
-					<span class="input-group-btn">
-						<button class="btn btn-success glyphicon glyphicon-search"></button>
-					</span>
+	<div class="container text-center">
+		<div class="row">
+			<div class="col-md-6">
+				<!-- Real Map -->
+				<div id="map-content">
+					<div id="map">
+						<div id="custom_style"></div>
+					</div>
 				</div>
-			</form><!--/ API testing-->
-
-<!-- /input-group -->
-			<div class="row gap">
+				<!--/ Real Map-->
+				<!--API testing-->
 			</div>
-			<img src="<%=@imgsrc%>" alt="Picture for <%=@address%>" />
+			<div class="col-md-6 fixed-height">
+				<p class="cal-heading">Calculate your ROI of listing your units with Seattle Housing Authority below.</p>
+
+				<form action="/map" method="get" class="form-horizontal" id="AddressForm">
+					<input type="hidden" name="zws-id" value="X1-ZWz1az100jazgr_82rpe">
+					<div class="input-group">
+						<input type="text" class="form-control" name="address" placeholder="Enter full unit address">
+						<span class="input-group-btn">
+							<button class="btn btn-success glyphicon glyphicon-search"></button>
+						</span>
+					</div>
+				</form><!--/ API testing-->
+
+				<!-- /input-group -->
+				<div class="row gap">
+				</div>
+				<img src="<%=@imgsrc%>" alt="Picture for <%=@address%>" />
 				<h5><%=@address%></h5>
 				<!-- Zestimate Pricing-->
 				<div class="panel panel-default">
-				  	<div class="panel-heading">
-				    	<h3 class="panel-title">Listing Price</h3>
-				  	</div>
-				  	<div class="panel-body">
-				    	<h3>$<%=@listingPrice %></h3>
-				  	</div>
+					<div class="panel-heading">
+						<h3 class="panel-title">Unit Listing Price</h3>
+					</div>
+					<div class="panel-body">
+						<h3>$<%=@listingPrice %></h3>
+					</div>
 				</div><!-- / Zestimate Pricing-->
-				<h7>Neighborhood: <%=@neighborhood%><br></h7>
-				<h7>School District: <%=@schoolDistrict%><br></h7>
 
-			<div class="col-md-12 parent-of-table">
-				<table class="table table-stripped drop-down-table">
-					<tr>
-						<td>Rooms:</td>
-						<td><%=@roomtype%></td>
-					</tr>
-					<tr>
-						<td>Sq. Ft.</td>
-						<td><%=@sqft%></td>
-					</tr>
-					<tr>
-						<td>Lot Sq. Ft.</td>
-						<td><%=@lotsqft%></td>
-					</tr>
-					<tr>
-						<td>Family Size</td>
-						<td><%=@familysize%></td>
-					</tr>
-					<tr>
-						<td>Year Built</td>
-						<td><%=@yearbuilt%></td>
-					</tr>
-					<tr>
-						<td>Roof</td>
-						<td><%=@roof%></td>
-					</tr>
-					<tr>
-						<td>Heating System</td>
-						<td><%=@heatingsystem%></td>
-					</tr>
-					<tr>
-						<td>Bedroom Count</td>
-						<td><%=@bedrooms%></td>
-					</tr>
-					<tr>
-						<td>Bathroom Count</td>
-						<td><%=@bathrooms%></td>
-					</tr>
-					<tr>
-						<td>Last Sold Date</td>
-						<td><%=@lastsolddate%></td>
-					</tr>
-					<tr>
-						<td>Last Sold Price</td>
-						<td><%=@lastsoldprice%></td>
-					</tr>
-					<tr>
-						<td>Number of Floors</td>
-						<td><%=@numoffloors%></td>
-					</tr>
-					<tr>
-						<td>Year Updated</td>
-						<td><%=@yearupdated%></td>
-					</tr>
-				</table>
-			</div><!--/End Listing Info-->
 
-			<!-- Monthly Overhead Form-->
+				<div class="col-md-12 parent-of-table">
+					<div class="facts">
+						<p class="facts-heading">Facts</p>
+						<ul>
+							<li>Neighborhood: <%=@neighborhood%></li>
+							<li>School District: <%=@schoolDistrict%></li>
+							<li>Rooms: <%=@roomtype%></li>
+							<li>Sq. Ft.: <%=@sqft%></li>
+							<li>Sq.Ft.: <%=@sqft%></li>
+							<li>Lot Sq. Ft.: <%=@lotsqft%></li>
+							<li>Family Size: <%=@familysize%></li>
+							<li>Year Built: <%=@yearbuilt%></li>
+							<li>Roof: <%=@roof%></li>
+							<li>Heating System: <%=@heatingsystem%></li>
+							<li>Bedroom Count: <%=@bedrooms%></li>
+							<li>Bathroom Count: <%=@bathrooms%></li>
+							<li>Last Sold Date: <%=@lastsolddate%></li>
+							<li>Last Sold Price: <%=@lastsoldprice%></li>
+							<li>Number of Floors: <%=@numoffloors%></li>
+							<li>Year Updated: <%=@yearupdated%></li>
+						</ul>
+					</div>
+				</div><!--/End Listing Info-->
+
+				<div>
+					<p id="cal-header"> STEP 1: Input your unit's financials to determine your base monthly overhead.</p>
+				</div>
+				<!-- Monthly Overhead Form-->
 				<form action="/map" method="get" class="form-horizontal" id="monthlyOverheadForm">
 					<input type="text" class="form-control" name="_monthlymortage" placeholder="Monthly Mortage">
 					<input type="text" class="form-control" name="_annualtaxes" placeholder="Annual Taxes">
 					<input type="text" class="form-control" name="_annualinsurance" placeholder="Annual Insurance">
 					<input type="text" class="form-control" name="_monthlyexpense" placeholder="Monthly Expenses">
-					<input type="submit" class="btn btn-default" value="Calculate">
+					<input type="submit" class="btn btn-default" id="cal-button" value="Calculate">
 				</form><!-- / Monthly Overhead Form-->
 
-			<!-- Monthly Overhead Result-->
+				<!-- Monthly Overhead Result-->
+
 				<div class="panel panel-default">
-				  	<div class="panel-heading">
-				    	<h3 class="panel-title">Base monthly overhead</h3>
-				  	</div>
-				  	<div class="panel-body">
-				    	<h3>$1,467</h3>
-				  	</div>
+					<div class="panel-heading">
+						<h3 class="panel-title">Base monthly overhead</h3>
+					</div>
+					<div class="panel-body">
+						<h3>$1,467</h3>
+					</div>
 				</div><!-- / Monthly Overhead Result-->
 
-			<!-- Find Ideal Tenants-->
-			<div class="white-smoke">
-				<h3>Now find your ideal voucher tenants</h3>
-				<h5>Desired rental unit profit percentage:</h5>
+				<!-- Find Ideal Tenants-->
+				<div>
+					<p id="tenants">
+						STEP 2: Find your ideal voucher tenants
+					</p>
+				</div>
+				<div class="white-smoke">
+					<h5>Desired rental unit profit percentage:</h5>
 					<select name="profitPercentage">
 						<option value=".10">10%</option>
 						<option value=".20">20%</option>
 						<option value=".30">30%</option>
 					</select>
 
-				<h5>Desired Tenant Disposable Income Level</h5>
+					<h5>Desired Tenant Disposable Income Level</h5>
 					<select name="profitPercentage">
 						<option value="Low">Low</option>
 						<option value="Mod">Mod</option>
 						<option value="High">High</option>
 					</select>
 
-				<div class="panel panel-default">
-				  	<div class="panel-heading">
-				    	<h3 class="panel-title">Available voucher tenats for your property</h3>
-				  	</div>
-				  	<div class="panel-body">
-				    	<h3>201 tenants</h3>
-				  	</div>
-				</div>
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">Available voucher tenats for your property</h3>
+						</div>
+						<div class="panel-body">
+							<h3>201 tenants</h3>
+						</div>
+					</div>
 
 
-				<a href="#" class="btn btn-primary">List Your Local HUD Authority</a>
+					<a href="#" class="btn btn-primary">List Your Local HUD Authority</a>
 
-			</div><!-- Find Ideal Tenants-->
+				</div><!-- Find Ideal Tenants-->
 
-			<div><iframe width="500px" title="Seattle Avg Rents" height="425px" src="https://communities.socrata.com/w/jehj-p2eg/?cur=Bcueuvr2Z2Z&from=root" frameborder="0" scrolling="no"><a href="https://communities.socrata.com/dataset/Seattle-Avg-Rents/jehj-p2eg" title="Seattle Avg Rents" target="_blank">Seattle Avg Rents By Neighborhood</a></iframe><p><a href="http://www.socrata.com/" target="_blank">Powered by Socrata</a></p></div>
+				<div><iframe width="500px" title="Seattle Avg Rents" height="425px" src="https://communities.socrata.com/w/jehj-p2eg/?cur=Bcueuvr2Z2Z&from=root" frameborder="0" scrolling="no"><a href="https://communities.socrata.com/dataset/Seattle-Avg-Rents/jehj-p2eg" title="Seattle Avg Rents" target="_blank">Seattle Avg Rents By Neighborhood</a></iframe><p><a href="http://www.socrata.com/" target="_blank">Powered by Socrata</a></p></div>
 
-			<div>
-				<h2>Per Unit Revenue Calculator</h2>
-				<form action="/map" method="get" class="form-horizontal">
-					<label>ListPrice</label>
-					<input type="text" name="listingPrice" placeholder="Enter List Price or Qualifiable Basis" value="<%= @listingPrice %>"><br>
-					<label>Number of Units in Building</label>
-					<input type="text" name="units" placeholder="Enter Units in Building"><br>
-					<label>Number of Qualified Low Income Renters</label>
-					<input type="text" name="qualified_renters" placeholder="Enter Family Size"><br>
-					<input type="submit" name="Submit" class="btn btn-primary">
-				</form>
-				<h3>Results</h3>
+				<div>
+					<h2>Per Unit Revenue Calculator</h2>
+					<form action="/map" method="get" class="form-horizontal">
+						<label>ListPrice</label>
+						<input type="text" name="listingPrice" placeholder="Enter List Price or Qualifiable Basis" value="<%= @listingPrice %>"><br>
+						<label>Number of Units in Building</label>
+						<input type="text" name="units" placeholder="Enter Units in Building"><br>
+						<label>Number of Qualified Low Income Renters</label>
+						<input type="text" name="qualified_renters" placeholder="Enter Family Size"><br>
+						<input type="submit" name="Submit" class="btn btn-primary">
+					</form>
+					<h3>Results</h3>
 					<label>Maximum Potential Income Per HUD unit</label> <%= @max_lih_income  %>
 					<label>Federal Tax Incentive Per HUD Unit<small>*included in calculation</small></label> <%= @tax_incentive %>
 
+				</div>
+				<small>*Tax savings does not include King County and Seattle Low Income Housing Tax Incentives</small>
 			</div>
-			<small>*Tax savings does not include King County and Seattle Low Income Housing Tax Incentives</small>
 		</div>
 	</div>
-</div>
 </section>
 
 <script type="text/javascript">
 
-  var mapStyle = [
-  {
-    "featureType": "water",
-    "stylers": [
-      { "color": "#B1BDD7" }
-    ]
-  }]
+	var mapStyle = [
+	{
+		"featureType": "water",
+		"stylers": [
+		{ "color": "#B1BDD7" }
+		]
+	}]
 
 	// Google Maps
 
 	handler = Gmaps.build('Google');
 	handler.buildMap({
-    internal: {id: 'custom_style'},
+		internal: {id: 'custom_style'},
 		provider: {
-        zoom:      11,
-        center:    new google.maps.LatLng(47.6097, -122.3331),
-        styles:    mapStyle
+			zoom:      11,
+			center:    new google.maps.LatLng(47.6097, -122.3331),
+			styles:    mapStyle
 		}, internal: {id: 'map'}}, function(){
-	  markers = handler.addMarkers([
-	    {
-	      "lat": <%= @latitude %>,
-	      "lng": <%= @longitude %>,
-	      "picture": {
-	        "url": "assets/map-pin-sm.png",
-	        "width":  36,
-	        "height": 36
-	      },
-	      "infowindow": "hello!"
-	    }
-	  ]);
+			markers = handler.addMarkers([
+			{
+				"lat": <%= @latitude %>,
+				"lng": <%= @longitude %>,
+				"picture": {
+					"url": "assets/map-pin-sm.png",
+					"width":  36,
+					"height": 36
+				},
+				"infowindow": "hello!"
+			}
+			]);
 	  // handler.bounds.extendWith(markers);
 	  // handler.fitMapToBounds();
 	});
 
 	// Drop-down on Home Info
 	$('.parent-of-table').click(function() {
-			$('.drop-down-table').toggleClass('visible');
+		$('.drop-down-table').toggleClass('visible');
 	});
 
 </script>
