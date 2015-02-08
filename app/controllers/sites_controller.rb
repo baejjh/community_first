@@ -1,5 +1,10 @@
 class SitesController < ApplicationController
     def map
+        # INPUT ADDRESS
+            #receives _address from view page and puts into urls
+        #END INPUT ADDRESS
+
+        # ZILLOW API
         input_url = "http://www.zillow.com/webservice/GetUpdatedPropertyDetails.htm?zws-id=X1-ZWz1az100jazgr_82rpe&zpid=48749425"
         @doc = Nokogiri::HTML(open(input_url)) do |config|
         config.options = Nokogiri::XML::ParseOptions::STRICT
@@ -43,7 +48,7 @@ class SitesController < ApplicationController
         end
         @html.xpath('//response//results//result').each do |path|
             @listingPrice    = path.at_xpath('//zestimate//amount').content.to_i unless path.at_xpath('//zestimate//amount').nil?
-        end
+        end # END ZILLOW API
 
         # source: http://www.huduser.org/portal/datasets/fmr/fmrs/FY2015_code/2015state_summary.odn
         # @fmr_income = 0
