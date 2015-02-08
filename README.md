@@ -1,6 +1,8 @@
 Community First:
 This app provides existing and potential property owners with the ability to calculate rent revenue on buildings in the Seattle based on currently available HUD Voucher Program rates and the Federal LIHTC Tax Credit.
 
+[Imgur](http://i.imgur.com/PXDnCga.jpg)
+
 This app was created at the Feb 7th Hack Housing Hackathon in Seattle WA.
 
 Challenge and Approach
