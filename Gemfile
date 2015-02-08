@@ -38,4 +38,5 @@ gem 'spring',        			group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'rails-footnotes',        	group: :development
+# Use to parse external (API) XML data
+gem 'nokogiri'
