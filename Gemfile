@@ -40,3 +40,7 @@ gem 'spring',        			group: :development
 
 # Use to parse external (API) XML data
 gem 'nokogiri'
+gem 'bootstrap_form'
+gem 'geocoder'
+gem 'underscore-rails'
+gem 'gmaps4rails'
