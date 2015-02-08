@@ -25,70 +25,73 @@
 		</div>
 		<div class="col-md-6 fixed-height">
 			<h3>You have searched:</h3>
-			<img src="<%= @imgsrc %>" alt="Picture for <%= @address %>" />
-			<h5><%= @address %></h5>
-			<h7>Neighborhood: <%= @neighborhood%></h7>
-			<h7>School District: < %= @schooldistrict%></h7>
-			<!--Listing Info-->
-			<div class="col-md-6">
-			<table class="table table-stripped">
-				<tr>
-					<td>Rooms</td>
-					<td>< %= @roomtype %></td>
-				</tr>
-				<tr>
-					<td>Sq. Ft.</td>
-					<td>< %= @sqft %></td>
-				</tr>
-				<tr>
-					<td>Lot Sq. Ft.</td>
-					<td>< %= @lotsqft %></td>
-				</tr>
-				<tr>
-					<td>Family Size</td>
-					<td>< %= @familysize %></td>
-				</tr>
-				<tr>
-					<td>Year Built</td>
-					<td>< %= @yearbuilt %></td>
-				</tr>
-				<tr>
-					<td>Roof</td>
-					<td>< %= @roof %></td>
-				</tr>
-				<tr>
-					<td>Heating System</td>
-					<td>< %= @heatingsystem %></td>
-				</tr>
-			</table>
-			</div>
-			<div class="col-md-6">
-			<table class="col-md-3 table table-stripped">
-				<tr>
-					<td>Bedroom Count</td>
-					<td>< %= @bedrooms %></td>
-				</tr>
-				<tr>
-					<td>Bathroom Count</td>
-					<td>< %= @bathrooms %></td>
-				</tr>
-				<tr>
-					<td>Last Sold Date</td>
-					<td>< %= @lastsolddate %></td>
-				</tr>
-				<tr>
-					<td>Last Sold Price</td>
-					<td>< %= @lastsoldprice %></td>
-				</tr>
-				<tr>
-					<td>Number of Floors</td>
-					<td>< %= @numoffloors %></td>
-				</tr>
-				<tr>
-					<td>Year Updated</td>
-					<td>< %= @yearupdated %></td>
-				</tr>
-			</table>
+			<img src="<%=@imgsrc%>" alt="Picture for <%=@address%>" />
+			<h5><%=@address%></h5>
+			<h7>Neighborhood: <%=@neighborhood%><br></h7>
+			<h7>School District: <%=@schoolDistrict%><br></h7>
+			<div class="col-md-12">
+				<table class="table table-stripped">
+					<div class="row">
+						<tr>
+							<td>Rooms:</td>
+							<td><%=@roomtype%></td>
+						</tr>
+					</div>
+					<div class="col-md-6">
+						<tr>
+							<td>Sq. Ft.</td>
+							<td><%=@sqft%></td>
+						</tr>
+						<tr>
+							<td>Lot Sq. Ft.</td>
+							<td><%=@lotsqft%></td>
+						</tr>
+						<tr>
+							<td>Family Size</td>
+							<td><%=@familysize%></td>
+						</tr>
+						<tr>
+							<td>Year Built</td>
+							<td><%=@yearbuilt%></td>
+						</tr>
+						<tr>
+							<td>Roof</td>
+							<td><%=@roof%></td>
+						</tr>
+						<tr>
+							<td>Heating System</td>
+							<td><%=@heatingsystem%></td>
+						</tr>
+					</div>
+				</table>
+				<table class="col-md-6 table table-stripped">
+					<div class="col-md-6">
+						<tr>
+							<td>Bedroom Count</td>
+							<td><%=@bedrooms%></td>
+						</tr>
+						<tr>
+							<td>Bathroom Count</td>
+							<td><%=@bathrooms%></td>
+						</tr>
+						<tr>
+							<td>Last Sold Date</td>
+							<td><%=@lastsolddate%></td>
+						</tr>
+						<tr>
+							<td>Last Sold Price</td>
+							<td><%=@lastsoldprice%></td>
+						</tr>
+						<tr>
+							<td>Number of Floors</td>
+							<td><%=@numoffloors%></td>
+						</tr>
+						<tr>
+							<td>Year Updated</td>
+							<td><%=@yearupdated%></td>
+						</tr>
+					</div>
+				</table>
 			</div><!--/End Listing Info-->
 
 			<!-- Monthly Overhead Form-->
@@ -111,7 +114,7 @@
 			</div><!-- / Monthly Overhead Result-->
 
 			<!-- Find Ideal Tenants-->
-			<div class="white-smoke"> 
+			<div class="white-smoke">
 				<h3><bold>Now find your ideal voucher tenants</bold></h3>
 				<h3>Desired rental unit profit percentage:</h3>
 					<select name="profitPercentage">
