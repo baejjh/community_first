@@ -3,6 +3,10 @@
   border-color: #eeeeee;
 }
 
+#housing-authority {
+  padding-top: 5px;
+}
+
 header .intro-text {
   padding-top: 100px;
 }
@@ -46,3 +50,54 @@ header .intro-text .intro-lead-in {
   border-color: #0072bc;
   color: white;
 }
+
+.cal-heading {
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
+  line-height: 1.5em;
+  font-weight: 900;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.facts {
+  text-align: left;
+}
+
+.facts-heading {
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
+  line-height: 1.5em;
+  font-weight: 900;
+}
+
+#cal-button {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #0072bc;
+  border-color: #0072bc;
+  color: white;
+}
+
+#cal-header {
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
+  line-height: 1.5em;
+  font-weight: 900;
+  padding-bottom: 10px;
+  padding-top: 50px;
+  margin-top: 20px;
+  text-align: left;
+}
+
+#tenants {
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
+  line-height: 1.5em;
+  font-weight: 900;
+  padding-bottom: 10px;
+  padding-top: 50px;
+  margin-top: 20px;
+  text-align: left;
+}
+
