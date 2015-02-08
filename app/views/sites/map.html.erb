@@ -1,5 +1,5 @@
 <!-- Maps Section -->
-<section id="services">
+<section id="maps">
 <div class="container">
     <div class="row">
         <div class="col-lg-12 text-center">
@@ -7,11 +7,84 @@
             <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
         </div>
     </div>
-    <div class="row text-center">
-		<div class="col-md-8">
+    <div class="row">
+		<div class="col-md-6">
 			<img src="https://lh6.googleusercontent.com/q0CXP6kw9yTiDNkB2pdTQExys_Ih_e0QVb02ITBaZbyeWi_bVTYp_emueJQWp0K9kCaCqorK-kO27zhhQlutXjUxJffpLlcUSDl9ujF_nfRoHiXKJZw" alt="fake_map" width="100%">
 		</div>
-		<div class="col-md-4">
+		<div class="col-md-6">
+			<!--API testing-->
+			<form action="/map" method="get">
+				<!-- <input type="hidden" name="_zwsid" value="X1-ZWz1az100jazgr_82rpe">
+				<input type="text" name="_streetaddress" placeholder="Enter the Street Address"> #use.join("+")
+				<input type="text" name="_city" placeholder="Enter the City">
+				<input type="text" name="_state" placeholder="Enter the State"> -->
+				<input type="submit" value="Get API">
+			</form><!--/ API testing-->
+			<h5><%= @address %></h5>
+			<h7>Neighborhood: <%= @neighborhood%></h7>
+			<h7>School District: < %= @schooldistrict%></h7>
+			<img src="<%= @imgsrc %>" alt="Picture for <%= @address %>" />
+			<!--Listing Info-->
+			<div class="col-md-6">
+			<table class="table table-stripped">
+				<tr>
+					<td>Rooms</td>
+					<td>< %= @roomtype %></td>
+				</tr>
+				<tr>
+					<td>Sq. Ft.</td>
+					<td>< %= @sqft %></td>
+				</tr>
+				<tr>
+					<td>Lot Sq. Ft.</td>
+					<td>< %= @lotsqft %></td>
+				</tr>
+				<tr>
+					<td>Family Size</td>
+					<td>< %= @familysize %></td>
+				</tr>
+				<tr>
+					<td>Year Built</td>
+					<td>< %= @yearbuilt %></td>
+				</tr>
+				<tr>
+					<td>Roof</td>
+					<td>< %= @roof %></td>
+				</tr>
+				<tr>
+					<td>Heating System</td>
+					<td>< %= @heatingsystem %></td>
+				</tr>
+			</table>
+			</div>
+			<div class="col-md-6">
+			<table class="col-md-3 table table-stripped">
+				<tr>
+					<td>Bedroom Count</td>
+					<td>< %= @bedrooms %></td>
+				</tr>
+				<tr>
+					<td>Bathroom Count</td>
+					<td>< %= @bathrooms %></td>
+				</tr>
+				<tr>
+					<td>Last Sold Date</td>
+					<td>< %= @lastsolddate %></td>
+				</tr>
+				<tr>
+					<td>Last Sold Price</td>
+					<td>< %= @lastsoldprice %></td>
+				</tr>
+				<tr>
+					<td>Number of Floors</td>
+					<td>< %= @numoffloors %></td>
+				</tr>
+				<tr>
+					<td>Year Updated</td>
+					<td>< %= @yearupdated %></td>
+				</tr>
+			</table>
+			</div><!--/End Listing Info-->
 			<!-- Mortage Calculator Widget Starts -->
 			<div id="horizontalWidget" style="width:370px;overflow:hidden;margin: 0 auto;text-align:center;font-family:verdana,arial,sans-serif;font-size:8pt;line-height:13x;background-color:#dbdbdb;letter-spacing:0;text-transform:none;border-radius: 5px;webkit-border-radius:5px;">
 				<div style="margin:6px 0;">
@@ -29,15 +102,7 @@
 			</div><!-- /Mortage Calculator Ends -->
 		</div>
 
-		<!--API testing-->
-		<form action="/one_address" method="get">
-			<!-- <input type="hidden" name="_zwsid" value="X1-ZWz1az100jazgr_82rpe">
-			<input type="text" name="_streetaddress" placeholder="">
-			<input type="text" name="_" placeholder=""> -->
-			<input type="submit" value="Get API">
-		</form>
 
-	<h1><%= @print_this_on_view.to_s.inspect %></h1>
 
 		<ul>
 			<li>
