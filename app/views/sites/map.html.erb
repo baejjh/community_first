@@ -217,8 +217,22 @@
 </section>
 
 <script type="text/javascript">
+  var mapStyle = [
+  {
+    "featureType": "water",
+    "stylers": [
+      { "color": "#B1BDD7" }
+    ]
+  }]
+
 	handler = Gmaps.build('Google');
-	handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+	handler.buildMap({
+    internal: {id: 'custom_style'},
+		provider: {
+        zoom:      11,
+        center:    new google.maps.LatLng(47.6097, -122.3331),
+        styles:    mapStyle
+		}, internal: {id: 'map'}}, function(){
 	  markers = handler.addMarkers([
 	    {
 	      "lat": <%= @latitude %>,
@@ -231,11 +245,11 @@
 	      "infowindow": "hello!"
 	    }
 	  ]);
-	  handler.bounds.extendWith(markers);
-	  handler.fitMapToBounds();
+	  // handler.bounds.extendWith(markers);
+	  // handler.fitMapToBounds();
 	});
 
+console.log('mappppieee')
 
-	drawMap(mapOptions)
 
 </script>
