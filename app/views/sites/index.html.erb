@@ -4,15 +4,30 @@
         <div class="intro-text">
             <div class="intro-lead-in">Let's put</div>
             <div class="intro-heading">COMMUNITY FIRST</div>
-            <form class="form-inline">
-            <input type="text" class="form-control" placeholder="Address">
-            <button type="submit" class="btn btn-success">Search Address</button>
-            </form>
-            <br>
-            <a href="#services" class="page-scroll btn btn-xl">Learn more</a>
+            <center>
+                <div class="rectangle">
+                    <div class="row gap"></div>
+                    <div class="row gap">
+                        <p class="rect-text">Discover the tax benefits available, the people you’ll be helping and your fast path to full occupancy.</p>
+                    </div>
+                    <div class="row">
+                        <form class="form-inline" method="get" action="/map">
+                            <div class="form-group">
+                            <input type="text" class="form-control" value="address" placeholder="Enter addresss">
+                                <input type="hidden" name="_zwsid" value="X1-ZWz1az100jazgr_82rpe">
+                                <button type="submit" class="btn btn-default">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </center>
         </div>
     </div>
+    <div class="row text-center">
+        <a href="#services" class="page-scroll btn btn-default"><i class="glyphicon glyphicon-menu-down"></i></a>
+    </div>
 </header>
+
 
 <!-- Services Section -->
 <section id="services">
@@ -165,20 +180,20 @@
                     </div>
                 </div>
                 <div class="row">
-                <div class="col-sm-6">
-                    <div class="team-member">
-                        <%=image_tag("steve.png", class: "img-responsive img-circle", size: "200")%>
-                        <h4>Steve Woolsey</h4>
-                        <p class="text-muted">Web Developer</p>
+                    <div class="col-sm-6">
+                        <div class="team-member">
+                            <%=image_tag("steve.png", class: "img-responsive img-circle", size: "200")%>
+                            <h4>Steve Woolsey</h4>
+                            <p class="text-muted">Web Developer</p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="team-member">
-                        <%=image_tag("jenny.jpg", class: "img-responsive img-circle", size: "200")%>
-                        <h4>Jenny Bae</h4>
-                        <p class="text-muted">Web Developer</p>
+                    <div class="col-sm-6">
+                        <div class="team-member">
+                            <%=image_tag("jenny.jpg", class: "img-responsive img-circle", size: "200")%>
+                            <h4>Jenny Bae</h4>
+                            <p class="text-muted">Web Developer</p>
+                        </div>
                     </div>
-                </div>
                 </div>
             </div>
 
