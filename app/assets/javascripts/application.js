@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require agency
+//= require underscore
+//= require gmaps/google
 //= require cbpAnimatedHeader
 //= require classie
 //= require turbolinks

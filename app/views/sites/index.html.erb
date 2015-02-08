@@ -2,9 +2,14 @@
 <header>
     <div class="container">
         <div class="intro-text">
-            <div class="intro-lead-in">Welcome To Our Studio!</div>
-            <div class="intro-heading">It's Nice To Meet You</div>
-            <a href="#services" class="page-scroll btn btn-xl">Tell Me More</a>
+            <div class="intro-lead-in">Let's put</div>
+            <div class="intro-heading">COMMUNITY FIRST</div>
+            <form class="form-inline">
+            <input type="text" class="form-control" placeholder="Address">
+            <button type="submit" class="btn btn-success">Search Address</button>
+            </form>
+            <br>
+            <a href="#services" class="page-scroll btn btn-xl">Learn more</a>
         </div>
     </div>
 </header>
@@ -52,7 +57,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2 class="section-heading">About</h2>
+                <h2 class="section-heading">WHO YOU WOULD HELP</h2>
                 <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
             </div>
         </div>
@@ -61,12 +66,12 @@
                 <ul class="timeline">
                     <li>
                         <div class="timeline-image">
-                            <%=image_tag("1.jpg", class: "img-responsive img-circle")%>
+                            <%=image_tag("family.jpg", class: "img-responsive img-circle", size: "300")%>
                         </div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
-                                <h4>2009-2011</h4>
-                                <h4 class="subheading">Our Humble Beginnings</h4>
+                                <h4>The Single Mom</h4>
+                                <h4 class="subheading">Helping her start again.</h4>
                             </div>
                             <div class="timeline-body">
                                 <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
@@ -75,12 +80,12 @@
                     </li>
                     <li class="timeline-inverted">
                         <div class="timeline-image">
-                            <%=image_tag("2.jpg", class: "img-responsive img-circle")%>
+                            <%=image_tag("elderly.jpg", class: "img-responsive img-circle", size: "300")%>
                         </div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
-                                <h4>March 2011</h4>
-                                <h4 class="subheading">An Agency is Born</h4>
+                                <h4>The Elderly</h4>
+                                <h4 class="subheading">Give her a safe place to live.</h4>
                             </div>
                             <div class="timeline-body">
                                 <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
@@ -89,12 +94,12 @@
                     </li>
                     <li>
                         <div class="timeline-image">
-                            <%=image_tag("3.jpg", class: "img-responsive img-circle")%>
+                            <%=image_tag("vetran.jpg", class: "img-responsive img-circle")%>
                         </div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
-                                <h4>December 2012</h4>
-                                <h4 class="subheading">Transition to Full Service</h4>
+                                <h4>The Vetran</h4>
+                                <h4 class="subheading">Give him a new home.</h4>
                             </div>
                             <div class="timeline-body">
                                 <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
@@ -117,9 +122,9 @@
                     </li>
                     <li class="timeline-inverted">
                         <div class="timeline-image">
-                            <h4>Be Part
-                                <br>Of Our
-                                <br>Story!</h4>
+                            <h4>Help
+                                <br>Your
+                                <br>Community!</h4>
                             </div>
                         </li>
                     </ul>
@@ -179,6 +184,17 @@
 
         </div>
     </section>
+
+    <!-- Clients Aside -->
+    <aside class="clients">
+        <div class="container">
+            <div class="row">
+                <div>
+                    <%= image_tag("logos.png", class: "img-responsive", size: "500")%>
+                </div>
+            </div>
+        </div>
+    </aside>
 
     <footer>
         <div class="container">
