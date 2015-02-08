@@ -2,6 +2,8 @@ class SitesController < ApplicationController
   $get_url = "http://www.zillow.com/webservice/GetDeepSearchResults.htm?"
 
     def map
+
+
     end
 
     def one_address
