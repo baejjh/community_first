@@ -112,6 +112,7 @@
 						<option value="High">High</option>
 					</select>
 
+<<<<<<< HEAD
 					<div class="panel panel-default">
 						<div class="panel-heading">
 							<h3 class="panel-title">Available voucher tenats for your property</h3>
@@ -140,6 +141,36 @@
 						<input type="submit" name="Submit" class="btn btn-primary">
 					</form>
 					<h3>Results</h3>
+=======
+				<div class="panel panel-default">
+				  	<div class="panel-heading">
+				    	<h3 class="panel-title">Available voucher tenats for your property</h3>
+				  	</div>
+				  	<div class="panel-body">
+				    	<h3>201 tenants</h3>
+				  	</div>
+				</div>
+
+
+				<a href="#" class="btn btn-primary">List Your Local HUD Authority</a>
+
+			</div><!-- Find Ideal Tenants-->
+
+			<div><iframe width="500px" title="Seattle Avg Rents" height="425px" src="https://communities.socrata.com/w/jehj-p2eg/?cur=Bcueuvr2Z2Z&from=root" frameborder="0" scrolling="no"><a href="https://communities.socrata.com/dataset/Seattle-Avg-Rents/jehj-p2eg" title="Seattle Avg Rents" target="_blank">Seattle Avg Rents</a></iframe><p><a href="http://www.socrata.com/" target="_blank">Powered by Socrata</a></p></div>
+
+			<div>
+				<h2>Per Unit Revenue Calculator</h2>
+				<form action="/map" method="get" class="form-horizontal">
+					<label>ListPrice</label>
+					<input type="text" name="listingPrice" placeholder="Enter List Price or Qualifiable Basis" value="<%= @listingPrice %>"><br>
+					<label>Number of Units in Building</label>
+					<input type="text" name="units" placeholder="Enter Units in Building"><br>
+					<label>Number of Qualified Low Income Renters</label>
+					<input type="text" name="qualified_renters" placeholder="Enter Family Size"><br>
+					<input type="submit" name="Submit" class="btn btn-primary">
+				</form>
+				<h3>Results</h3>
+>>>>>>> 0aa88f9f7aaca3dbdb467e1a650eb4c8dd729149
 					<label>Maximum Potential Income Per HUD unit</label> <%= @max_lih_income  %>
 					<label>Federal Tax Incentive Per HUD Unit<small>*included in calculation</small></label> <%= @tax_incentive %>
 

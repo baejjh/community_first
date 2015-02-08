@@ -1,120 +1,41 @@
+Community First:
+This app provides existing and potential property owners with the ability to calculate rent revenue on buildings in the Seattle area based on currently available HUD Voucher Program rates and the Federal LIHTC Tax Credit.
 
-    Zillow data:    Sales price?
-    Zillow data:   How much does it cost to purchase?
-    Developer:     Buyer's own estimate on what they think they'll purchase the house for?
+![alt tag](http://i.imgur.com/PXDnCga.jpg)
 
-    HUD:            What is the FMV?
-    HUD:            What is the FMV +/- 10% range
-    Zillow:        What is the going rental rate for the area?
-    (compare above)
+This app was created at the Feb 7th Hack Housing Hackathon in Seattle WA.
 
-    Zillow:        Finance mortgage calculator
-    Developer:      What additional expenses are anticipated to bring property to "livable condition"
+Challenge and Approach
 
-    Unknowns:        Additional susidies
-    Unknowns:       IRS tax benefits
+Challenge: There is a massive shortage of housing options available for low income families. The fastest route to increasing housing supply may be through appealing to private landlord’s investment strategies. If adequate return on investment could be demonstrated to real estate investors (landlords); and a system could be provided to link qualified tenants with their properties the problem of housing shortages may be diminished.
 
-    Result is the location viable for Low-Incoming Housing investment
+Action: Provide map comparing Zillow’s sales/rent data to fair market value (FMV). Provide calculations based on FMV vs. purchase/rent data + estimated costs to bring property up to code, cost of inspections, financing costs, and/or any other program requirements to help determine potential return on investment.
 
-   _________________
+Future upgrades: Pages should outline the Pros of joining the program, and it could link directly to housing authorities to help streamline paperwork submittal for program approval, have reminders for inspections, document storage for lease and tenant information and possibly a portal to communicate with tenants.
 
+Our approach for satisfying this challenge was to:
 
-Objectives
--Create estimate tool for properties
-    -zillow has data on what is available for rent while HUD has potential HUD units
-    -A goal is to integrate local(Zillow) and HUD data to show potential units
--Map potential HUD Properties using Zillow Sales and Rent Data - What does it cost for the property
--Compare that to Fair Market Value provided by HUD API -
--LIHTC - Calculate Tax Benefit to Home Owner
+Research currently available low income programs in Seattle
+Research currently available tax incentives for low income housing.
 
+Team Members
 
+Our team is comprised of:
 
+@alexandermonsanto - Developer and former Accountant
+@stevewoolsey - Developer and Entreprenuer
+@alyssawilliams - Developer and former Health Care Provider
+@jennybae - Developer and student
+@joshshchober - UX Designer
+Technologies: Ruby on Rails and JS
+APIs: Zillow, Socrate, Google Maps
+Datasets Utilized: HUD, Seattle.Gov, IRS
 
--SOCRATA MAN: Compare high median rental price vs. cheap homes that can be provided as HUD properties
+We have all recently transitioned our careers into web development and UX design. We leveraged our previous expertise and newly aquired tech skills to tackle a problem facing the community in which we live.
 
+In order to run our app:
 
-Federal The Programs
-___________________
--Voucher Program
-  *Uses Private Proterties
-  *Can be used by any Land Lord
-  *Sedtion 8
--Privately Owned and Subsidized
-  *Section 8
-  *Multi-Family Properties
--Public Housing
-  *Section 8
-
-State and Local Programs
-_________________
-
-
-Personas
-_________________
--Private Developer
-  *Develops Property
-  *Accepts Voucher
--Public Housing
-  *Accepts Voucher
-
-API's
-___________________
--HUD Data
-    -GeoService -JSON - zillowhack.hud.opendata.arcgis.com
-    -Multi-Family Properties - Private
-        -STD_City - narrows down to city
-        -is_sub and is_sec8_ind="Y" are SQL where filters
-        -Proximity filters
-        -Lists private
-    -Public Housing Authorities
-    -FMR - fair market rates
-    -LIHTC - Low income tax credits
-    -Housing Choice Vouchers - asked to address bc does not include potential qualifying properties
-
-    -HUD Resource Locater
-        -Shows affordable housing resources in map
-            -Public Housing Authority in Yellow
-                -Seattle housing authority, King County Housing Authority
-                    -Housing choice voucher
-        -Many other programs not a part of HUD and not tracked - IMPORTANT
-        -How do we intersect local data with HUD's resource locater
-        -Put all resources on a map so that people know what is available to them
-
-    -Housing Affordability - localaffordability.info - DOH & DOT
-        -All of the data is located in HUD site
-            -Location affordability index data
-                -Renters and Owners Data
-                    -Transportation Costs and Consumption Data
-                    -Demographic Data
-
--Socrata
-  -Gov Data - Zillow Data - communities.socrate.com/catalogs/hack/housing
-  -Generates API data - req. application token
-      -ex: Median housing price for Seattle housing
-
-
-Questions
-___________________
--What is our scope
-    -Who are we targeting?
-        -A goal is to integrate local(Zillow) and HUD data to show potential units - IMPORTANT
-
-
-        For landlords seeking eligible tenants or PHAs seeking to recruit landlords to participate in the voucher program
- How can I connect with potential tenants in my area?
- How can I advertise available units?
- How can PHAs identify areas or landlords to recruit for their voucher programs?
- What new rules and laws do I need to be aware of to make sure my community is in compliance with all federal and local requirements?
- What can I do to make my community more attractive to potential tenants?
-
-
-
-    ____________________
-
-
-
-
-
+Enter an address of an existing or potential multifamily housing unit and from the map page enter the calculator data. Compare the potential revenue from a HUD voucher applicant to the average rent in the neighborhood (provided by Socrata).
 
 
 
