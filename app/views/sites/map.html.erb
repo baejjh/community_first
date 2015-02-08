@@ -47,6 +47,7 @@
 				</div><!-- / Zestimate Pricing-->
 				<h7>Neighborhood: <%=@neighborhood%><br></h7>
 				<h7>School District: <%=@schoolDistrict%><br></h7>
+
 			<div class="col-md-12 parent-of-table">
 				<table class="table table-stripped drop-down-table">
 					<tr>
@@ -235,10 +236,5 @@
 	  handler.bounds.extendWith(markers);
 	  handler.fitMapToBounds();
 	});
-	drawMap(mapOptions)
-
-	// Drop-down on Home Info
-	$('.parent-of-table').click(function() {
-			$('.drop-down-table').toggleClass('visible');
-	});
+	drawMap(mapOptions);
 </script>
