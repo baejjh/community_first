@@ -4,129 +4,118 @@
 
 <section id="maps">
 <div class="container text-center">
-    <div class="row">
-		<div class="col-md-6">
-		<!-- Real Map -->
-			<div id="map-content">
-	  		<div id="map">
-	  			<div id="custom_style"></div>
-	  		</div>
-	  	</div>
-		<!--/ Real Map-->
-		<!--API testing-->ß
-		</div>
-		<div class="col-md-6 fixed-height">
-			<form action="/map" method="get" class="form-horizontal" id="AddressForm">
+	<!-- Real Map -->
+	<div id="map-content">
+  		<div id="map">
+  			<div id="custom_style"></div>
+  		</div>
+  	</div><!--/ Real Map-->
+
+	<!--Submitting an Address-->
+	<div class="row col-md-6 fixed-height">
+
+		<form action="/map" method="get" class="form-horizontal" id="AddressForm">
+			<div class="input-group col-md-11">
 				<input type="hidden" name="zws-id" value="X1-ZWz1az100jazgr_82rpe">
-				<div class="input-group">
-					<input type="text" class="form-control" name="address" placeholder="Enter full address">
-					<span class="input-group-btn">
-						<button class="btn btn-success glyphicon glyphicon-search"></button>
-					</span>
-				<!--API testing-->
+				<input type="text" class="form-control" name="address" placeholder="Enter Full Address">
+				<input type="submit" class="btn btn-success glyphicon glyphicon-search">
 			</div>
-			<div class="col-md-6 fixed-height">
-				<p class="cal-heading">Calculate your ROI of listing your units with Seattle Housing Authority below.</p>
+		</form><!--Submitting an Address-->
 
-				<form action="/map" method="get" class="form-horizontal" id="AddressForm">
-					<input type="hidden" name="zws-id" value="X1-ZWz1az100jazgr_82rpe">
-					<div class="input-group">
-						<input type="text" class="form-control" name="address" placeholder="Enter full unit address">
-						<span class="input-group-btn">
-							<button class="btn btn-success glyphicon glyphicon-search"></button>
-						</span>
-					</div>
-				</form><!--/ API testing-->
 
-				<!-- /input-group -->
-				<div class="row gap">
+		<div class="col-md-6 fixed-height">
+			<div class="gap"></div>
+			<p class="cal-heading">Calculate your ROI of listing your units with Seattle Housing Authority below.</p>
+			<img src="<%=@imgsrc%>" alt="Picture for <%=@address%>" />
+			<h5><%=@address%></h5>
+
+			<!-- Zestimate Pricing-->
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Unit Listing Price</h3>
 				</div>
-				<img src="<%=@imgsrc%>" alt="Picture for <%=@address%>" />
-				<h5><%=@address%></h5>
-				<!-- Zestimate Pricing-->
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						<h3 class="panel-title">Unit Listing Price</h3>
-					</div>
-					<div class="panel-body">
-						<h3>$<%=@listingPrice %></h3>
-					</div>
-				</div><!-- / Zestimate Pricing-->
-
-
-				<div class="col-md-12 parent-of-table">
-					<div class="facts">
-						<p class="facts-heading">Facts</p>
-						<ul>
-							<li>Neighborhood: <%=@neighborhood%></li>
-							<li>School District: <%=@schoolDistrict%></li>
-							<li>Rooms: <%=@roomtype%></li>
-							<li>Sq. Ft.: <%=@sqft%></li>
-							<li>Sq.Ft.: <%=@sqft%></li>
-							<li>Lot Sq. Ft.: <%=@lotsqft%></li>
-							<li>Family Size: <%=@familysize%></li>
-							<li>Year Built: <%=@yearbuilt%></li>
-							<li>Roof: <%=@roof%></li>
-							<li>Heating System: <%=@heatingsystem%></li>
-							<li>Bedroom Count: <%=@bedrooms%></li>
-							<li>Bathroom Count: <%=@bathrooms%></li>
-							<li>Last Sold Date: <%=@lastsolddate%></li>
-							<li>Last Sold Price: <%=@lastsoldprice%></li>
-							<li>Number of Floors: <%=@numoffloors%></li>
-							<li>Year Updated: <%=@yearupdated%></li>
-						</ul>
-					</div>
-				</div><!--/End Listing Info-->
-
-				<div>
-					<p id="cal-header"> STEP 1: Input your unit's financials to determine your base monthly overhead.</p>
+				<div class="panel-body">
+					<h3>$<%=@listingPrice %></h3>
 				</div>
+			</div><!-- / Zestimate Pricing-->
 
-				<!-- Monthly Overhead Result-->
-
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						<h3 class="panel-title">Base monthly overhead</h3>
-					</div>
-					<div class="panel-body">
-						<h3>$1,467</h3>
-					</div>
-				</div><!-- / Monthly Overhead Result-->
-
-				<a href="#" class="btn btn-primary">List Your Local HUD Authority</a>
-
-				<div><iframe width="500px" title="Seattle Avg Rents" height="425px" src="https://communities.socrata.com/w/jehj-p2eg/?cur=Bcueuvr2Z2Z&from=root" frameborder="0" scrolling="no"><a href="https://communities.socrata.com/dataset/Seattle-Avg-Rents/jehj-p2eg" title="Seattle Avg Rents" target="_blank">Seattle Avg Rents By Neighborhood</a></iframe><p><a href="http://www.socrata.com/" target="_blank">Powered by Socrata</a></p></div>
-
-				<div>
-					<h2>Per Unit Revenue Calculator</h2>
-					<form action="/calculate" method="get" class="form-horizontal">
-						<label>ListPrice</label>
-						<input type="text" name="listingPrice" placeholder="Enter List Price or Qualifiable Basis" value="<%= @listingPrice %>"><br>
-							<label>Number of Units in Building</label>
-						<input type="text" name="units" placeholder="Enter Units in Building"><br>
-							<label>Number of Qualified Low Income Renters</label>
-						<input type="text" name="qualified_renters" placeholder="Enter Family Size"><br>
-						<input type="submit" name="Submit" class="btn btn-primary">
-					</form>
+			<!--Listing Info-->
+			<div class="col-md-12 parent-of-table">
+				<div class="facts">
+					<p class="facts-heading">Facts</p>
+					<ul>
+						<li>Neighborhood: <%=@neighborhood%></li>
+						<li>School District: <%=@schoolDistrict%></li>
+						<li>Rooms: <%=@roomtype%></li>
+						<li>Sq. Ft.: <%=@sqft%></li>
+						<li>Sq.Ft.: <%=@sqft%></li>
+						<li>Lot Sq. Ft.: <%=@lotsqft%></li>
+						<li>Family Size: <%=@familysize%></li>
+						<li>Year Built: <%=@yearbuilt%></li>
+						<li>Roof: <%=@roof%></li>
+						<li>Heating System: <%=@heatingsystem%></li>
+						<li>Bedroom Count: <%=@bedrooms%></li>
+						<li>Bathroom Count: <%=@bathrooms%></li>
+						<li>Last Sold Date: <%=@lastsolddate%></li>
+						<li>Last Sold Price: <%=@lastsoldprice%></li>
+						<li>Number of Floors: <%=@numoffloors%></li>
+						<li>Year Updated: <%=@yearupdated%></li>
+					</ul>
 				</div>
+			</div><!--/End Listing Info-->
 
-				<% if flash[:max_lih_income] %>
-					<div class="panel panel-default">
-				  	<div class="panel-heading">
-				    	<h3 class="panel-title">Results</h3>
-				  	</div>
-				  	<div class="panel-body">
-				    	<label>Maximum Potential Income Per HUD unit</label>
-							<h3>$<%= flash[:max_lih_income].round(2) %></h3>
-						<label>Federal Tax Incentive Per HUD Unit <small>*included in calculation</small></label>
-						<small>*Tax savings does not include King County and Seattle Low Income Housing Tax Incentives</small>
-							<h3>$<%= flash[:tax_incentive].round(2) %></h3>
-				  	</div>
-				  	</div>
-				<% end %>
+			<!-- Monthly Overhead Result-->
+			<div><p id="cal-header"> STEP 1: Input your unit's financials to determine your base monthly overhead.</p></div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Base monthly overhead</h3>
+				</div>
+				<div class="panel-body">
+					<h3>$1,467</h3>
+				</div>
+			</div><!-- / Monthly Overhead Result-->
+
+			<a href="#" class="btn btn-primary">List Your Local HUD Authority</a>
+
+			<!-- Socrata Widget -->
+			<div><p id="cal-header"> STEP 2: See the local listings in your area.</p></div>
+
+			<div>
+				<iframe width="500px" title="Seattle Avg Rents" height="425px" src="https://communities.socrata.com/w/jehj-p2eg/?cur=Bcueuvr2Z2Z&from=root" frameborder="0" scrolling="no"><a href="https://communities.socrata.com/dataset/Seattle-Avg-Rents/jehj-p2eg" title="Seattle Avg Rents" target="_blank">Seattle Avg Rents By Neighborhood</a></iframe>
+				<p><a href="http://www.socrata.com/" target="_blank">Powered by Socrata</a></p>
+			</div><!-- Socrata Widget -->
+
+			<!-- Revenue Calculator -->
+			<div>
+				<h2>Per Unit Revenue Calculator</h2>
+				<form action="/calculate" method="get" class="form-horizontal">
+					<label>ListPrice</label>
+					<input type="text" name="listingPrice" placeholder="Enter List Price or Qualifiable Basis" value="<%= @listingPrice %>"><br>
+						<label>Number of Units in Building</label>
+					<input type="text" name="units" placeholder="Enter Units in Building"><br>
+						<label>Number of Qualified Low Income Renters</label>
+					<input type="text" name="qualified_renters" placeholder="Enter Family Size"><br>
+					<input type="submit" name="Submit" class="btn btn-primary">
+				</form>
 			</div>
-		</div>
-	</div>
+
+			<% if flash[:max_lih_income] %>
+				<div class="panel panel-default">
+			  	<div class="panel-heading">
+			    	<h3 class="panel-title">Results</h3>
+			  	</div>
+			  	<div class="panel-body">
+			    	<label>Maximum Potential Income Per HUD unit</label>
+						<h3>$<%= flash[:max_lih_income].round(2) %></h3>
+					<label>Federal Tax Incentive Per HUD Unit <small>*included in calculation</small></label>
+					<small>*Tax savings does not include King County and Seattle Low Income Housing Tax Incentives</small>
+						<h3>$<%= flash[:tax_incentive].round(2) %></h3>
+			  	</div>
+			  	</div>
+			<% end %> <!-- Revenue Calculator -->
+		</div> <!-- / Div Row End-->
+	</div> <!-- / Div Container End-->
 </section>
 
 <script type="text/javascript">
