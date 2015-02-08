@@ -5,8 +5,6 @@
 <section id="maps">
 <div class="container text-center">
     <div class="row">
-    </div>
-    <div class="row">
 		<div class="col-md-6">
 		<!-- Real Map -->
 			<div id="map-content">
@@ -18,13 +16,10 @@
 		<!--API testing-->
 		</div>
 		<div class="col-md-6 fixed-height">
-			<form action="/map" method="get" class="form-horizontal">
-<!--			<input type="hidden" name="_zwsid" value="X1-ZWz1az100jazgr_82rpe">
-				<input type="text" class="form-control" name="_streetaddress" placeholder="Enter the Street Address"> <!-- use.join("+") -->
-				<div class="row gap2">
-				</div>
+			<form action="/map" method="get" class="form-horizontal" id="AddressForm">
+				<input type="hidden" name="zws-id" value="X1-ZWz1az100jazgr_82rpe">
 				<div class="input-group">
-					<input type="text" class="form-control" name="_address" placeholder="Enter full address">
+					<input type="text" class="form-control" name="address" placeholder="Enter full address">
 					<span class="input-group-btn">
 						<button class="btn btn-success glyphicon glyphicon-search"></button>
 					</span>
@@ -106,7 +101,7 @@
 			</div><!--/End Listing Info-->
 
 			<!-- Monthly Overhead Form-->
-				<form action="#" method="get" class="form-horizontal">
+				<form action="/map" method="get" class="form-horizontal" id="monthlyOverheadForm">
 					<input type="text" class="form-control" name="_monthlymortage" placeholder="Monthly Mortage">
 					<input type="text" class="form-control" name="_annualtaxes" placeholder="Annual Taxes">
 					<input type="text" class="form-control" name="_annualinsurance" placeholder="Annual Insurance">

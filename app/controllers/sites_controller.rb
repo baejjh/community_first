@@ -1,13 +1,28 @@
 class SitesController < ApplicationController
+
     def map
         # INPUT ADDRESS
-            #receives _address from view page and puts into urls
+            @input_url = request.fullpath               #get full request from client
+            @req_to_zillow_url = @input_url.to_s        #make it a string we can chop
+            @please_work = @req_to_zillow_url[5..100]   #remove '/maps?'
         #END INPUT ADDRESS
 
+        # #GET ZPID
+        # new_url             = "http://www.zillow.com/webservice/GetDeepSearchResults.htm?"+@please_work
+        # @display            = Nokogiri::HTML(open(new_url)) do |config|
+        # config.options      = Nokogiri::XML::ParseOptions::STRICT
+        # end
+        # @display.xpath('//response').each do |thing|
+        #     @get_zpid        = thing.at_xpath('//results//result//zpid').content unless path.at_xpath('//results//result//zpid').nil?
+        # endÍ
+        # puts "THIS IS A TERRIBLE IDEA"+@get_zpid.to_s
+
         # ZILLOW API
-        input_url = "http://www.zillow.com/webservice/GetUpdatedPropertyDetails.htm?zws-id=X1-ZWz1az100jazgr_82rpe&zpid=48749425"
-        @doc = Nokogiri::HTML(open(input_url)) do |config|
-        config.options = Nokogiri::XML::ParseOptions::STRICT
+        
+        input_url           = "http://www.zillow.com/webservice/GetUpdatedPropertyDetails.htm?zws-id=X1-ZWz1az100jazgr_82rpe&zpid=48749425"
+        # input_url           = "http://www.zillow.com/webservice/GetUpdatedPropertyDetails.htm?zws-id="+params["zws-id"]+"&zpid="+@zpid_string
+        @doc                = Nokogiri::HTML(open(input_url)) do |config|
+        config.options      = Nokogiri::XML::ParseOptions::STRICT
         end
         @doc.xpath('//response').each do |path|
             @latitude       = path.at_xpath('//address/latitude').content unless path.at_xpath('//address/latitude').nil?
@@ -74,7 +89,7 @@ class SitesController < ApplicationController
         #LIHTC Calculation
         @tax_incentive = (((@listingPrice * 0.04)/12)/@units) unless (((@listingPrice * 0.04)/12)/@units).nil?
 
-        #Maximum Possible Rental Income
+        # Maximum Possible Rental Income
         @max_lih_income = 0
         @renters = params[:qualified_renters] || 0
         case @renters
@@ -95,5 +110,5 @@ class SitesController < ApplicationController
             when 8
             @max_lih_income = 2809.08 + @tax_incentive
         end
-    end
+    end # end method map
 end
