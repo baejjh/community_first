@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'sites#index'
 
   get 'map'             => 'sites#map'
+  get 'calculate'       => 'sites#calculator'
 
   get 'calculators/index'
   get 'calculators/show'

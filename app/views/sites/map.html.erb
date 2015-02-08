@@ -13,7 +13,7 @@
 	  		</div>
 	  	</div>
 	  <!--/ Real Map-->
-		<!--API testing-->
+		<!--API testing-->ß
 		</div>
 		<div class="col-md-6 fixed-height">
 			<form action="/map" method="get" class="form-horizontal" id="AddressForm">
@@ -153,8 +153,8 @@
 			<div><iframe width="500px" title="Seattle Avg Rents" height="425px" src="https://communities.socrata.com/w/jehj-p2eg/?cur=Bcueuvr2Z2Z&from=root" frameborder="0" scrolling="no"><a href="https://communities.socrata.com/dataset/Seattle-Avg-Rents/jehj-p2eg" title="Seattle Avg Rents" target="_blank">Seattle Avg Rents By Neighborhood</a></iframe><p><a href="http://www.socrata.com/" target="_blank">Powered by Socrata</a></p></div>
 
 			<div>
-				<h2>Per Unit Revenue Calculator</h2>
-				<form action="/map" method="get" class="form-horizontal">
+				<h3>Per Unit Revenue Calculator</h3>
+				<form action="/calculate" method="get" class="form-horizontal">
 					<label>ListPrice</label>
 					<input type="text" name="listingPrice" placeholder="Enter List Price or Qualifiable Basis" value="<%= @listingPrice %>"><br>
 					<label>Number of Units in Building</label>
@@ -163,9 +163,14 @@
 					<input type="text" name="qualified_renters" placeholder="Enter Family Size"><br>
 					<input type="submit" name="Submit" class="btn btn-primary">
 				</form>
-				<h3>Results</h3>
-					<label>Maximum Potential Income Per HUD unit</label> <%= @max_lih_income  %>
-					<label>Federal Tax Incentive Per HUD Unit<small>*included in calculation</small></label> <%= @tax_incentive %>
+
+				<% if flash[:max_lih_income] %>
+					<h3>Results</h3>
+					<label>Maximum Potential Income Per HUD unit</label>
+						<h3>$<%= flash[:max_lih_income].round(2) %><h3>
+					<label>Federal Tax Incentive Per HUD Unit<small>*included in calculation</small></label>
+						<h3>$<%= flash[:tax_incentive].round(2) %><h3>
+				<% end %>
 
 			</div>
 			<small>*Tax savings does not include King County and Seattle Low Income Housing Tax Incentives</small>
