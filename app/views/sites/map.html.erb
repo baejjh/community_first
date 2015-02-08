@@ -150,68 +150,27 @@
 				  	</div>
 				</div>
 
-				<table class="col-md-3 table table-stripped">
-					<tr>
-						<td>Fair Market Value (FMV)</td>
-						<td>Estimated Monthly Rent</td>
-						<td>$1,580</td>
-						<td>Available Voucher Tenants</td>
-						<td>1,200</td>
-						<td>Avg. Tenant Eviction Rate</td>
-						<td>0.2%</td>
-					</tr>
-					<tr>
-						<td>var</td>
-						<td>Estimated Monthly Rent</td>
-						<td>$1,613</td>
-						<td>Vacant Units in Your Area</td>
-						<td>301</td>
-						<td>Avg. Tenant Eviction Rate</td>
-						<td>37%</td>
-					</tr>
-				</table>
 
 				<a href="#" class="btn btn-primary">List Your Local HUD Authority</a>
 
 			</div><!-- Find Ideal Tenants-->
 
-			<div><iframe width="500px" title="Seattle Avg Rents" height="425px" src="https://communities.socrata.com/w/jehj-p2eg/?cur=Bcueuvr2Z2Z&from=root" frameborder="0" scrolling="no"><a href="https://communities.socrata.com/dataset/Seattle-Avg-Rents/jehj-p2eg" title="Seattle Avg Rents" target="_blank">Seattle Avg Rents</a></iframe><p><a href="http://www.socrata.com/" target="_blank">Powered by Socrata</a></p></div>
+			<div><iframe width="500px" title="Seattle Avg Rents" height="425px" src="https://communities.socrata.com/w/jehj-p2eg/?cur=Bcueuvr2Z2Z&from=root" frameborder="0" scrolling="no"><a href="https://communities.socrata.com/dataset/Seattle-Avg-Rents/jehj-p2eg" title="Seattle Avg Rents" target="_blank">Seattle Avg Rents By Neighborhood</a></iframe><p><a href="http://www.socrata.com/" target="_blank">Powered by Socrata</a></p></div>
 
-			<!-- Mortage Calculator Widget Starts -->
-			<div id="horizontalWidget" style="width:370px;overflow:hidden;margin: 0 auto;text-align:center;font-family:verdana,arial,sans-serif;font-size:8pt;line-height:13x;background-color:#dbdbdb;letter-spacing:0;text-transform:none;border-radius: 5px;webkit-border-radius:5px;">
-				<div style="margin:6px 0;">
-					<a href="http://www.zillow.com/mortgage-calculator/" target="_blank" title="Mortgage Calculators on Zillow" style="font-family:Arial;font-size:15px;text-decoration:none;font-weight:bold;color:#666666;cursor: pointer;display: block;text-align: center;text-shadow: 0 1px #fff;">Estimate Payment</a>
-				</div>
-				<div style="width:352px;margin:0 auto;background-color:#f4f4f4;text-align:left; font-size:8pt;border-radius: 5px; border: 1px solid;border-color:#cccccc;webkit-border-radius: 5px;padding: 0 1px;">
-					<iframe title="Mortgage Calculator" frameborder="0" height="235px" style="float:left;" scrolling="no" width="352px" src="http://www.zillow.com/mortgage/SmallMortgageLoanCalculatorWidget.htm?price=400000&wtype=spc&rid=102001&wsize=small&textcolor=666666&backgroundColor=f4f4f4&advTabColor=9b9b9b&bgcolor=dbdbdb&bgtextcolor=666666&headerTextShadow=fff&widgetOrientationType=horizontalWidget">
-					</iframe>
-				<div style="clear:both;"></div>
-				</div>
-				<div style="height:20px;">
-					<span style="display:block;margin:0 auto;font-size:7pt;height:15px;width:178px;color:#666666;padding-top:2px;"><a href="http://www.zillow.com/mortgage-rates/" target="_blank" title="Zillow Mortgages" style="text-decoration:none;color:#3366bb;font-weight:normal;font-family:verdana,arial,sans-serif;font-size:7pt;color:#666666;">Zillow Mortgage Calculator</a>
-					</span>
-				</div>
-			</div><!-- /Mortage Calculator Ends -->
 			<div>
-				<h2>Revenue Calculator</h2>
+				<h2>Per Unit Revenue Calculator</h2>
 				<form action="/map" method="get" class="form-horizontal">
 					<label>ListPrice</label>
 					<input type="text" name="listingPrice" placeholder="Enter List Price or Qualifiable Basis" value="<%= @listingPrice %>"><br>
-					<label>Max LIH Income</label> <%= @max_lih_income.inspect  %>
-					<label>Tax Incentive</label> <%= @tax_incentive %>
+					<label>Number of Units in Building</label>
+					<input type="text" name="units" placeholder="Enter Units in Building"><br>
 					<label>Number of Qualified Low Income Renters</label>
-					<select name="qualified_renters">
-					  <option value="1">1</option>
-					  <option value="2">2</option>
-					  <option value="3">3</option>
-					  <option value="4">4</option>
-					  <option value="5">5</option>
-					  <option value="6">6</option>
-					  <option value="7">7</option>
-					  <option value="8">8</option>
-					</select>
+					<input type="text" name="qualified_renters" placeholder="Enter Family Size"><br>
 					<input type="submit" name="Submit" class="btn btn-primary">
 				</form>
+				<h3>Results</h3>
+					<label>Maximum Potential Income Per HUD unit</label> <%= @max_lih_income  %>
+					<label>Federal Tax Incentive Per HUD Unit<small>*included in calculation</small></label> <%= @tax_incentive %>
 
 			</div>
 			<small>*Tax savings does not include King County and Seattle Low Income Housing Tax Incentives</small>
