@@ -1,6 +1,6 @@
 <!-- Maps Section -->
-<section id="maps">
-<div class="container">
+<section id="maps" style="padding-top:0px;">
+<div class="container text-center">
     <div class="row">
         <div class="col-lg-12 text-center">
             <h2 class="section-heading">Map</h2>
@@ -9,21 +9,23 @@
     </div>
     <div class="row">
 		<div class="col-md-6">
-			<img src="https://lh6.googleusercontent.com/q0CXP6kw9yTiDNkB2pdTQExys_Ih_e0QVb02ITBaZbyeWi_bVTYp_emueJQWp0K9kCaCqorK-kO27zhhQlutXjUxJffpLlcUSDl9ujF_nfRoHiXKJZw" alt="fake_map" width="100%">
+			<!--Display a Interactive Map-->
+			<img src="https://lh6.googleusercontent.com/q0CXP6kw9yTiDNkB2pdTQExys_Ih_e0QVb02ITBaZbyeWi_bVTYp_emueJQWp0K9kCaCqorK-kO27zhhQlutXjUxJffpLlcUSDl9ujF_nfRoHiXKJZw" alt="fake_map" width="100%"><!--Display a Interactive Map-->
+			<!--API testing-->
+			<form action="/map" method="get" class="form-horizontal">
+				<input type="hidden" name="_zwsid" value="X1-ZWz1az100jazgr_82rpe">
+				<input type="text" class="form-control" name="_streetaddress" placeholder="Enter the Street Address"> <!-- use.join("+") -->
+				<input type="text" class="form-control" name="_city" placeholder="Enter the City">
+				<input type="text" class="form-control" name="_state" placeholder="Enter the State">
+				<input type="submit" class="btn btn-success" value="Search a Home">
+			</form><!--/ API testing-->
 		</div>
 		<div class="col-md-6 fixed-height">
-			<!--API testing-->
-			<form action="/map" method="get">
-				<!-- <input type="hidden" name="_zwsid" value="X1-ZWz1az100jazgr_82rpe">
-				<input type="text" name="_streetaddress" placeholder="Enter the Street Address"> #use.join("+")
-				<input type="text" name="_city" placeholder="Enter the City">
-				<input type="text" name="_state" placeholder="Enter the State"> -->
-				<input type="submit" value="Get API">
-			</form><!--/ API testing-->
+			<h3>You have searched:</h3>
+			<img src="<%= @imgsrc %>" alt="Picture for <%= @address %>" />
 			<h5><%= @address %></h5>
 			<h7>Neighborhood: <%= @neighborhood%></h7>
 			<h7>School District: < %= @schooldistrict%></h7>
-			<img src="<%= @imgsrc %>" alt="Picture for <%= @address %>" />
 			<!--Listing Info-->
 			<div class="col-md-6">
 			<table class="table table-stripped">
@@ -102,19 +104,17 @@
 			</div><!-- /Mortage Calculator Ends -->
 		</div>
 
-
-
-		<ul>
-			<li>
-				<a href="http://www.zillow.com/webservice/GetDeepSearchResults.htm?zws-id=X1-ZWz1az100jazgr_82rpe&address=2114+Bigelow+Ave&citystatezip=Seattle%2C+WA">GetDeepSearchResults</a>
-			</li>
-			<li>
-				<a href="http://www.zillow.com/webservice/GetUpdatedPropertyDetails.htm?zws-id=X1-ZWz1az100jazgr_82rpe&zpid=48749425">GetUpdatedPropertyDetails API</a>
-			</li>
-			<li>
-				<a href="http://www.zillow.com/webservice/GetDeepComps.htm?zws-id=X1-ZWz1az100jazgr_82rpe&zpid=48749425&count=5">GetDeepComps API</a>
-			</li>
-		</ul>
+<!-- <ul>
+		<li>
+			<a href="http://www.zillow.com/webservice/GetDeepSearchResults.htm?zws-id=X1-ZWz1az100jazgr_82rpe&address=2114+Bigelow+Ave&citystatezip=Seattle%2C+WA">GetDeepSearchResults</a>
+		</li>
+		<li>
+			<a href="http://www.zillow.com/webservice/GetUpdatedPropertyDetails.htm?zws-id=X1-ZWz1az100jazgr_82rpe&zpid=48749425">GetUpdatedPropertyDetails API</a>
+		</li>
+		<li>
+			<a href="http://www.zillow.com/webservice/GetDeepComps.htm?zws-id=X1-ZWz1az100jazgr_82rpe&zpid=48749425&count=5">GetDeepComps API</a>
+		</li>
+	</ul> -->
 	</div>
 </div>
 </section>
