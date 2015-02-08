@@ -175,6 +175,8 @@
 
 			</div><!-- Find Ideal Tenants-->
 
+			<div><iframe width="500px" title="Seattle Avg Rents" height="425px" src="https://communities.socrata.com/w/jehj-p2eg/?cur=Bcueuvr2Z2Z&from=root" frameborder="0" scrolling="no"><a href="https://communities.socrata.com/dataset/Seattle-Avg-Rents/jehj-p2eg" title="Seattle Avg Rents" target="_blank">Seattle Avg Rents</a></iframe><p><a href="http://www.socrata.com/" target="_blank">Powered by Socrata</a></p></div>
+
 			<!-- Mortage Calculator Widget Starts -->
 			<div id="horizontalWidget" style="width:370px;overflow:hidden;margin: 0 auto;text-align:center;font-family:verdana,arial,sans-serif;font-size:8pt;line-height:13x;background-color:#dbdbdb;letter-spacing:0;text-transform:none;border-radius: 5px;webkit-border-radius:5px;">
 				<div style="margin:6px 0;">
@@ -191,11 +193,12 @@
 				</div>
 			</div><!-- /Mortage Calculator Ends -->
 			<div>
-				<h2>Earnings Calculator</h2>
+				<h2>Revenue Calculator</h2>
 				<form action="/map" method="get" class="form-horizontal">
-					<label>ListPrice/Qualifiable Basis</label>
-					<input type="text" name="listingPrice" placeholder="Enter List Price or Qualifiable Basis" value="<%= @listingPrice %>">
-					Bedroom count: <%=@bedrooms%>
+					<label>ListPrice</label>
+					<input type="text" name="listingPrice" placeholder="Enter List Price or Qualifiable Basis" value="<%= @listingPrice %>"><br>
+					<label>Max LIH Income</label> <%= @max_lih_income.inspect  %>
+					<label>Tax Incentive</label> <%= @tax_incentive %>
 					<label>Number of Qualified Low Income Renters</label>
 					<select name="qualified_renters">
 					  <option value="1">1</option>
