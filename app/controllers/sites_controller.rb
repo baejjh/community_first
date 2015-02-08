@@ -69,14 +69,14 @@ class SitesController < ApplicationController
         #   puts "Please select a bedroom count"
         # end
 
-        @units = params[:unit]
+        @units = params[:unit] || 0
 
         #LIHTC Calculation
-        @tax_incentive = (((@listingPrice * 0.04)/12)/@units)
+        @tax_incentive = (((@listingPrice * 0.04)/12)/@units) unless (((@listingPrice * 0.04)/12)/@units).nil?
 
         #Maximum Possible Rental Income
         @max_lih_income = 0
-        @renters = post[:qualified_renters]
+        @renters = params[:qualified_renters] || 0
         case @renters
             when 1
             @max_lih_income = 964.58 + @tax_incentive
