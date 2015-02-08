@@ -1,0 +1,42 @@
+.navbar-default {
+  background-color: #eeeeee;
+  border-color: #eeeeee;
+}
+
+header .intro-text {
+  padding-top: 100px;
+}
+
+header .intro-text .intro-lead-in {
+  font-family: 'Merriweather', serif;
+  font-weight: 700;
+  padding-top: 100px;
+  padding-right: 200px;
+  padding-left: 200px;
+}
+
+/*header {
+  background-size: 100% 100%;
+  background-repeat: none;
+}*/
+
+.rectangle {
+    width: 500px;
+    height: 175px;
+    opacity: 0.8;
+    background: #619e2f;
+    margin-top: 50px;
+}
+
+.rect-text {
+  padding-right: 24px;
+  padding-left: 24px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.5em;
+}
+
+.form-group .home input {
+    width: 400px;
+}
