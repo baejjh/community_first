@@ -21,11 +21,11 @@ Team Members
 
 Our team is comprised of:
 
-@alexandermonsanto [Alexander Monsanto](https://www.linkedin.com/in/alexandermonsanto) - Developer and former Accountant
-@stevewoolsey [Steve Woosley](www.linkedin.com/in/stevewoolsey)- Developer and Entreprenuer
-@alyssawilliams - Developer and former Health Care Provider
-@jennybae - Developer and student
-@joshshchober - UX Designer
+[Alexander Monsanto](https://www.linkedin.com/in/alexandermonsanto) - Developer and former Accountant
+[Steve Woosley](www.linkedin.com/in/stevewoolsey)- Developer and Entreprenuer
+[Alyssa Williams](www.linkedin.com/in/ajwilliams12)- Developer and former Health Care Provider
+[Jenny Bae](www.linkedin.com/in/baejj)- Developer and student
+[Josh Schober](www.linkedin.com/in/joshuaschober) - UX Designer
 Technologies: Ruby on Rails and JS
 APIs: Zillow, Socrate, Google Maps
 Datasets Utilized: HUD, Seattle.Gov, IRS
