@@ -272,7 +272,7 @@ header {
     text-align: center;
     color: #fff;
     background-attachment: scroll;
-    background-image: url('header-bg.jpg');
+    background-image: url('homepage.jpg');
     background-position: center center;
     background-repeat: none;
     -webkit-background-size: cover;
@@ -281,10 +281,10 @@ header {
     -o-background-size: cover;
 }
 
-header .intro-text {
+/*header .intro-text {
     padding-top: 100px;
     padding-bottom: 50px;
-}
+}*/
 
 header .intro-text .intro-lead-in {
     margin-bottom: 0px;
