@@ -3,7 +3,7 @@
     "featureType": "water",
     "stylers": [
       { "color": "#B1BDD7" }
-    ];
+    ]
 
   var drawMap = function(mapOptions){
     var handler = Gmaps.build('Google');
