@@ -1,12 +1,23 @@
 class CalculatorsController < ApplicationController
   def index
     # source: http://www.huduser.org/portal/datasets/fmr/fmrs/FY2015_code/2015state_summary.odn
-    var fmr_eff_bd = 972
-    var fmr_one_bd = 1150
-    var fmr_wo_bd = 1415
-    var fmr_three_bd = 2085
-    var fmr_four_bd = 2506
+    @fmr_income = 0
 
+    @bedrooms = gets.bdrm
+    case @bedrooms
+    when 0
+      @fmr_income = 972
+    when 1
+      @fmr_income = 1150
+    when 2
+      @fmr_income = 1415
+    when 3
+      @fmr_income = 2085
+    when 4
+      @fmr_income = 2506
+    else
+      puts "Please select a bedroom count"
+    end
   end
 
   def show
