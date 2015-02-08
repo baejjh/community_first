@@ -20,31 +20,33 @@ class CalculatorsController < ApplicationController
     #   puts "Please select a bedroom count"
     # end
 
+    @units = gets.units
+
     #LIHTC Calculation
     @listing_price = gets.listingPrice
 
-    @listing_price = ((@listingPrice * .04)/12)
+    @tax_incentive = (((@listingPrice * .04)/12)/@units)
 
     #Maximum Possible Rental Income
     @max_lih_income = 0
     @renters = gets.qualified_renters
     case @renters
     when 1
-    @max_lih_income = 964.58
+    @max_lih_income = 964.58 + @tax_incentive
     when 2
-    @max_lih_income = 1055.67
+    @max_lih_income = 1055.67 + @tax_incentive
     when 3
-    @max_lih_income = 1303.75
+    @max_lih_income = 1303.75 + @tax_incentive
     when 4
-    @max_lih_income = 1785.42
+    @max_lih_income = 1785.42 + @tax_incentive
     when 5
-    @max_lih_income = 2123.33
+    @max_lih_income = 2123.33 + @tax_incentive
     when 6
-    @max_lih_income = 2431.42
+    @max_lih_income = 2431.42 + @tax_incentive
     when 7
-    @max_lih_income = 2775.25
+    @max_lih_income = 2775.25 + @tax_incentive
     when 8
-    @max_lih_income = 2809.08
+    @max_lih_income = 2809.08 + @tax_incentive
 
 
 
