@@ -139,29 +139,31 @@
 
 				<div>
 					<h2>Per Unit Revenue Calculator</h2>
-					<form action="/map" method="get" class="form-horizontal">
+					<form action="/calculate" method="get" class="form-horizontal">
 						<label>ListPrice</label>
 						<input type="text" name="listingPrice" placeholder="Enter List Price or Qualifiable Basis" value="<%= @listingPrice %>"><br>
-						<label>Number of Units in Building</label>
+							<label>Number of Units in Building</label>
 						<input type="text" name="units" placeholder="Enter Units in Building"><br>
-						<label>Number of Qualified Low Income Renters</label>
+							<label>Number of Qualified Low Income Renters</label>
 						<input type="text" name="qualified_renters" placeholder="Enter Family Size"><br>
 						<input type="submit" name="Submit" class="btn btn-primary">
 					</form>
-					<% if flash[:max_lih_income] %>
-						<div class="panel panel-default">
-					  	<div class="panel-heading">
-					    	<h3 class="panel-title">Results</h3>
-					  	</div>
-					  	<div class="panel-body">
-					    	<label>Maximum Potential Income Per HUD unit</label>
-								<h3>$<%= flash[:max_lih_income].round(2) %><h3>
-							<label>Federal Tax Incentive Per HUD Unit<small>*included in calculation</small></label>
-								<h3>$<%= flash[:tax_incentive].round(2) %><h3>
-							<small>*Tax savings does not include King County and Seattle Low Income Housing Tax Incentives</small>
-					  	</div>
-					<% end %>
 				</div>
+
+				<% if flash[:max_lih_income] %>
+					<div class="panel panel-default">
+				  	<div class="panel-heading">
+				    	<h3 class="panel-title">Results</h3>
+				  	</div>
+				  	<div class="panel-body">
+				    	<label>Maximum Potential Income Per HUD unit</label>
+							<h3>$<%= flash[:max_lih_income].round(2) %></h3>
+						<label>Federal Tax Incentive Per HUD Unit <small>*included in calculation</small></label>
+						<small>*Tax savings does not include King County and Seattle Low Income Housing Tax Incentives</small>
+							<h3>$<%= flash[:tax_incentive].round(2) %></h3>
+				  	</div>
+				  	</div>
+				<% end %>
 			</div>
 		</div>
 	</div>
