@@ -3,7 +3,54 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .fixed-height {
+  top: 52px;
 	height: 500px;
-    overflow-y:scroll;
+    background-color: #F8F8F8;
+  position:fixed;
+  overflow-y:scroll;
+  right:0px;
+  width:500px;
+  height:auto;
+  padding-left:10px;
+  bottom:0px;
+/*    overflow-y:scroll;*/
     overflow-x:hidden;
+
+}
+
+navbar-default {
+  top: 0px;
+  position: fixed;
+  width: 100%;
+  border-color: transparent;
+/*  background-color: #222;*/
+}
+
+.gap2 {
+  padding-top: 10px;
+}
+
+/*#map {
+  height: 400px;
+  width: 100px;
+}*/
+
+#map {
+    height: 100%;
+    top:0px;
+    bottom:0px;
+    margin: 0px;
+    padding: 0px;
+}
+
+#map-content {
+    position:fixed;
+    right:500px;
+    left:0px;
+    height:auto;
+    padding:0px;
+    top:53px;
+    bottom:0px;
+    z-index:55;
+/*       z-index:-1;*/
 }
