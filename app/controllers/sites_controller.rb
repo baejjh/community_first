@@ -1,7 +1,10 @@
 class SitesController < ApplicationController
+
     def map
         # INPUT ADDRESS
-            #receives _address from view page and puts into urls
+            @input_url = request.fullpath               #get full request from client
+            @req_to_zillow_url = @input_url.to_s        #make it a string we can chop
+            @please_work = @req_to_zillow_url[5..100]   #remove '/maps?'
         #END INPUT ADDRESS
 
         # ZILLOW API
