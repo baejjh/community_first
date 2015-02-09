@@ -36,8 +36,9 @@ In order to run our app:
 
 Enter an address of an existing or potential multifamily housing unit and from the map page enter the calculator data. Compare the potential revenue from a HUD voucher applicant to the average rent in the neighborhood (provided by Socrata).
 
-Presentation Error
+Presentation Day Error:
 
+There was a presentation of our error because we overused the Zillow API url. It happened to be that the run right before our presentation happened when we "reached is maximum number of calls for today." Sad pandas:
 ![alt tag](http://i.imgur.com/zaG1Sy0.png?1)
 
 
