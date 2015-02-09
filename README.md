@@ -36,5 +36,9 @@ In order to run our app:
 
 Enter an address of an existing or potential multifamily housing unit and from the map page enter the calculator data. Compare the potential revenue from a HUD voucher applicant to the average rent in the neighborhood (provided by Socrata).
 
+Presentation Error
+
+![alt tag](http://i.imgur.com/zaG1Sy0.png?1)
+
 
 
