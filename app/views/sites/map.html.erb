@@ -17,15 +17,23 @@
 		<form action="/map" method="get" class="form-horizontal" id="AddressForm">
 			<div class="input-group col-md-11">
 				<input type="hidden" name="zws-id" value="X1-ZWz1az100jazgr_82rpe">
-				<input type="text" class="form-control" name="address" placeholder="Enter Full Address">
-				<input type="submit" class="btn btn-success glyphicon glyphicon-search">
+				<input type="text" class="form-control col-md-10" name="address" placeholder="Enter Full Address">
+				<input type="submit" class="form-control col-md-1 btn btn-success"></span>
 			</div>
 		</form><!--Submitting an Address-->
 
+<!-- When address has been entered -->
+		<% if params[:address].nil? %>
+			<p class="cal-heading"><%= flash[:welcome]%></p>
+		<% else %>
 
-		<div class="col-md-6 fixed-height">
-			<div class="gap"></div>
+<!-- When address has NOT been entered -->
+			<div class="col-md-6 fixed-height">
+				<div class="gap"></div>
+				<div class="gap"></div>
+				<div class="gap"></div>
 			<p class="cal-heading">Calculate your ROI of listing your units with Seattle Housing Authority below.</p>
+
 			<img src="<%=@imgsrc%>" alt="Picture for <%=@address%>" />
 			<h5><%=@address%></h5>
 
@@ -65,7 +73,7 @@
 			</div><!--/End Listing Info-->
 
 			<!-- Monthly Overhead Result-->
-			<div><p id="cal-header"> STEP 1: Input your unit's financials to determine your base monthly overhead.</p></div>
+			<p id="cal-header"> STEP 1: Input your unit's financials to determine your base monthly overhead.</p>
 
 			<div class="panel panel-default">
 				<div class="panel-heading">
@@ -79,7 +87,7 @@
 			<a href="#" class="btn btn-primary">List Your Local HUD Authority</a>
 
 			<!-- Socrata Widget -->
-			<div><p id="cal-header"> STEP 2: See the local listings in your area.</p></div>
+			<p id="cal-header"> STEP 2: See the local listings in your area.</p>
 
 			<div>
 				<iframe width="500px" title="Seattle Avg Rents" height="425px" src="https://communities.socrata.com/w/jehj-p2eg/?cur=Bcueuvr2Z2Z&from=root" frameborder="0" scrolling="no"><a href="https://communities.socrata.com/dataset/Seattle-Avg-Rents/jehj-p2eg" title="Seattle Avg Rents" target="_blank">Seattle Avg Rents By Neighborhood</a></iframe>
@@ -90,13 +98,24 @@
 			<div>
 				<h2>Per Unit Revenue Calculator</h2>
 				<form action="/calculate" method="get" class="form-horizontal">
-					<label>ListPrice</label>
-					<input type="text" name="listingPrice" placeholder="Enter List Price or Qualifiable Basis" value="<%= @listingPrice %>"><br>
-						<label>Number of Units in Building</label>
-					<input type="text" name="units" placeholder="Enter Units in Building"><br>
-						<label>Number of Qualified Low Income Renters</label>
-					<input type="text" name="qualified_renters" placeholder="Enter Family Size"><br>
-					<input type="submit" name="Submit" class="btn btn-primary">
+				<table class="table table-striped">
+				<tr>
+					<td>List Price for Your Property</td>
+					<td><input type="text" name="listingPrice" placeholder="Enter List Price or Qualifiable Basis" value="<%= @listingPrice %>"></td>
+				</tr>
+				<tr>
+					<td>Number of Units in Building</td>
+					<td><input type="text" name="units" placeholder="Enter Units in Building"></td>
+				</tr>
+				<tr>
+					<td>Number of Qualified Low Income Renters</td>
+					<td><input type="text" name="qualified_renters" placeholder="Enter Family Size"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="submit" name="Submit" class="btn btn-success"></td>
+				</tr>
+				</table>
 				</form>
 			</div>
 
@@ -113,13 +132,13 @@
 						<h3>$<%= flash[:tax_incentive].round(2) %></h3>
 			  	</div>
 			  	</div>
-			<% end %> <!-- Revenue Calculator -->
+			<% end %> <!-- End Revenue Calculator -->
+		<% end %>
 		</div> <!-- / Div Row End-->
 	</div> <!-- / Div Container End-->
 </section>
 
 <script type="text/javascript">
-
 	var mapStyle = [
 	{
 		"featureType": "water",
@@ -153,10 +172,4 @@
 	  // handler.bounds.extendWith(markers);
 	  // handler.fitMapToBounds();
 	});
-
-	// Drop-down on Home Info
-	$('.parent-of-table').click(function() {
-		$('.drop-down-table').toggleClass('visible');
-	});
-
 </script>
